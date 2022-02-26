@@ -10,7 +10,7 @@ lpc-server is a server of [lpcpanel](https://www.npmjs.com/package/lpcpanel) npm
 To setup this server
 
 ```bash
-  npm istall
+  npm install
 ```
 
 Run server using
