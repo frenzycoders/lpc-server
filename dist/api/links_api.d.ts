@@ -1,0 +1,10 @@
+import { Request, Response } from "express";
+export declare const createSharedLink: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const updateSharedLinks: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const getSharedLinks: (req: Request, res: Response) => Promise<void>;
+export declare const deleteSharedLinks: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const createUploadLinks: (req: Request, res: Response) => Promise<void>;
+export declare const getUploadLinks: (req: Request, res: Response) => Promise<void>;
+export declare const deleteUploadLinks: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const updateUploadLinks: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const validateUploadlinks: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;

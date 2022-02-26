@@ -1,0 +1,12 @@
+import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
+export declare const generateJwtToken: (payload: any) => string;
+export declare const validateJwtToken: (token: string) => string | jwt.JwtPayload;
+export declare const parseAuthorizationToken: (token: string) => string;
+export declare const isAuthenticated: (req: Request, res: Response, next: NextFunction) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const downloadAuthenticated: (req: Request, res: Response, next: NextFunction) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const encryptPassword: (password: string) => Promise<string>;
+export declare const comparePassword: (hash: string, password: string) => Promise<boolean>;
+export declare const checkMachineOwner: (req: Request, res: Response, next: NextFunction) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const ismachineOnline: (req: Request, res: Response, next: NextFunction) => Response<any, Record<string, any>> | undefined;
+export declare const getSocketWithMachineId: (req: Request, res: Response, next: NextFunction) => Response<any, Record<string, any>> | undefined;

@@ -1,0 +1,11 @@
+import { Request, Response } from "express";
+export declare const createMachine: (req: Request, res: Response) => Promise<void>;
+export declare const getMachines: (req: Request, res: Response) => Promise<void>;
+export declare const delMachine: (req: Request, res: Response) => Promise<void>;
+export declare const readDirs: (req: Request, res: Response) => Promise<void>;
+export declare const deleteFiles: (req: Request, res: Response) => Promise<void>;
+export declare const uploadEntity: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const downloadEntity: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const publicDownload: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const uploadPublic: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const getSystemDetails: (req: Request, res: Response) => Promise<void>;
