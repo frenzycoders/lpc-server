@@ -79,14 +79,18 @@ export const deleteMachineFormOnline = async (socketid: string) => {
 
 const main = async () => {
     try {
-        await mongoose.connect('mongodb://localhost/other');
+        if (!process.env.DB_URL) {
+            console.log('please setup database url in .env file');
+            process.exit(1);
+        }
+        let conn = await mongoose.connect(process.env.DB_URL as string);
         console.log('database connection status : true');
+        console.log({ 'host': conn.connection.host, 'databse': conn.connection.name, 'port': conn.connection.port, 'models': conn.connection.models });
         io.listen(PORT);
         console.log('io server is up and running on port : ' + PORT);
         server.listen(API_SERVER_PORT, () => {
             console.log('api server is up and running on port : ' + API_SERVER_PORT);
         })
-
         await apiService(app);
     } catch (error) {
         console.log('database connection error ', error);
